@@ -1,0 +1,71 @@
+person = {
+
+    'name':'Victor',
+    'surname':'Vampire',
+    'age': 300,
+    'Location':'Hotel Transilvania',
+    'Любимое блюдо': ['кровь', 'девственицы', 'карбонара' ],
+    'Машина': 'Porsche',
+    'Hobby':'Кусать девок за сиськи',
+
+}
+#выведем из дикта ключи
+for keys in person.keys():
+    print(keys)
+
+#выведем из дикта значения
+for values in person.values():
+    print(values)
+
+#вывести красиво ключ значение
+for k,v  in person.items():
+    print(k, ":",  v)
+
+#вывести из списка который в значениях по ключу все значения  я так понимаю
+# тут фором если числа можно устролить перебор
+for values in person['Любимое блюдо']:
+    print(values)
+
+
+
+#словарь в словаре такую ебанину ты видел на работе часто когда в {} еще {} пример ниже
+
+persons = {
+
+    'Victor': {
+    'surname':'Vampire',
+    'age': 300,
+    'Location':'Hotel Transilvania',
+    'Любимое блюдо': ['кровь', 'девственицы', 'карбонара' ],
+    'Машина': 'Porsche',
+    'Hobby':'Кусать девок за сиськи',
+    },
+    'Дракула': {
+    'surname':'Vampire',
+    'age': 350,
+    'Location':'Hotel Transilvania',
+    'Любимое блюдо': ['кровь', 'пельмени', 'коттлеты' ],
+    'Машина': 'BMW',
+    'Hobby':' кусать девок за жопу',
+    },
+
+}
+
+for username, userinfo in persons.items():
+    print(username,userinfo)
+
+    for username in persons.keys():
+        print(username )
+    for userinfo in persons.values():
+        print(userinfo)
+
+
+# перебрать фором и найти в них значения которые я хочу
+for username, userinfo in persons.items():
+    surname = userinfo["surname"]
+    age = userinfo['age']
+    car = userinfo['Машина']
+    print(username, age, car, surname)
+    print(f"Имя: {username}, тачка: {car}, возраст: {age}, фамилия: {surname}")
+
+    print(persons.get("Victor"))
